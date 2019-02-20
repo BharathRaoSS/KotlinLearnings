@@ -1,0 +1,62 @@
+/**
+ * We declare a package-level function main which returns Unit and takes
+ * an Array of strings as a parameter. Note that semicolons are optional.
+ */
+
+fun main(args: Array<String>) {
+    
+    //If Else
+    println("//If Else Learnings:")
+    var num1: Int = 10
+    var num2: Int = 20
+    var result = if(num1 > num2) num1 else num2
+        println(result)
+    
+    //Switch case
+    println("\n//Switch Case Learnings:")
+    var switchResult: String
+    var switchVariable = 1
+    switchResult = when (switchVariable) {
+        1 -> "One"
+        2 -> "Two"
+        3 -> "Three"
+        else -> "Default Value: Please Enter the number starting between 1 to 3"
+    }
+    println(switchResult)
+    
+    //For loop with value and index
+    println("\n//ForLoop Learnings:")
+    println("//With Value and Index")
+    var forLoop = 1..5
+    for((index,num) in forLoop.withIndex() )
+       println("$num $index")
+   
+    //Functions
+    println("\n//Functions Learnings:")
+    println("With Default Value:")
+    defaultValueFunction(5)
+    println("With Named Params:")
+    
+    //we can use args in any order for named parameters
+    defaultValueFunction(namedParam=2,someOptionalVariable=6)
+    
+    //Null Safe String
+    println("\nType Safe String")
+    var nullSafeString: String? = null
+    println(nullSafeString?.length)
+
+    //Null safe String with Assertion
+    println("\nNull Safe With Assertion")
+    var nullSafeAssertionString: String? = "Some Definite String Value"
+    println(nullSafeAssertionString!!.length)
+    
+    //Lambda Expression
+    println("\nLambda Expression")
+    val sum: (Int, Int) -> Int = { x, y -> x + y }
+ 	println(sum(2,2)) 
+}
+
+fun defaultValueFunction(someOptionalVariable :Int = 5, namedParam :Int = 1) {
+    println(someOptionalVariable + namedParam)
+}
+
